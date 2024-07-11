@@ -6,151 +6,94 @@
 @endphp --}}
 <main>
     <!-- page title start -->
-    <div class="page-title-area section-notch pt-170 pb-170" style="background-image: url('{{ asset('images/person_1-min.jpg')}}">
-
-        <div class="banner-overlay"></div>
-        <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="page-title">
-                    <h2>Meet Our Staffs</h2>
-                    <div class="breadcrumb-list text-left">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li>Teacher</li>
-                        </ul>
+    <section class="hero-slider hero-style-1 section-notch">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-inner slide-overlay slide-bg-image" style="background-image: url('{{ asset('images/p.jpg')}}">
+                        <div class="container">
+                            <div class="col-xl-12">
+                                <div class="page-title">
+                                    <h2>SMPN 1 Margahayu</h2>
+                                    <div class="breadcrumb-list text-left">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {{-- <div class="swiper-slide">
+                    <div class="slide-inner slide-overlay slide-bg-image" data-background="assets/img/slider/slide-02.jpg">
+                        <div class="container">
+                            <div data-swiper-parallax="200" class="slide-span">
+                                <span>A New Approach to</span>
+                            </div>
+                            <div data-swiper-parallax="300" class="slide-title">
+                                <h2>Kids Education</h2>
+                            </div>
+                            <div data-swiper-parallax="400" class="slide-text">
+                                <p>The Universe is one great kindergarten for man. Everything that exists has brought with it its own peculiar lesson.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="slider-btn">
+                                <a data-swiper-parallax="500" class="thm-btn thm-btn-2" href="contact.html">Admissaion
+                                    Now</a>
+                                <a data-swiper-parallax="550" class="thm-btn" href="classes.html">Our Classes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"> --}}
+                    {{-- <div class="slide-inner slide-overlay slide-bg-image" data-background="assets/img/slider/slide-03.jpg">
+                        <div class="container">
+                            <div data-swiper-parallax="200" class="slide-span">
+                                <span>A New Approach to</span>
+                            </div>
+                            <div data-swiper-parallax="300" class="slide-title">
+                                <h2>Kids Education</h2>
+                            </div>
+                            <div data-swiper-parallax="400" class="slide-text">
+                                <p>The Universe is one great kindergarten for man. Everything that exists has brought with it its own peculiar lesson.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="slider-btn">
+                                <a data-swiper-parallax="500" class="thm-btn thm-btn-2" href="contact.html">Admissaion
+                                    Now</a>
+                                <a data-swiper-parallax="550" class="thm-btn" href="classes.html">Our Classes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> --}}
+            <!-- end swiper-wrapper -->
+
+            <!-- swipper controls -->
+            <div class="container">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
  <!-- page title end -->
 
  <!-- teacher area start -->
  <section class="team-area pt-110 pb-120">
      <div class="container">
          <div class="row mt-none-30">
-            {{-- @foreach ($guru as $item)
-
-                    <div class="about_card">
-                        <div class="about-detail">
-                            <div class="about_img-box">
-                                <img src="{{ asset('/storage/gurus/'. $item->foto) }}" class="rounded"
-                                    style="width: 150px">
-                            </div>
-                            <div class="card_detail-ox">
-                                <h4>{{ $item->nama }}</h4>
-                                <p class="tmt-3">
-                                    <small>TTL</small> <br>
-                                    {{ $item->tempat_lahir }} , {{ $item->tanggal_lahir }} <br>
-                                    <small>Agama</small> <br>
-                                    {{ $item->agama }} <br>
-                                    <small>Jenis kelamin</small> <br>
-                                    @if ( $item->jenis_kelamin === 0 )
-                                    Laki-laki
-                                    @else
-                                    Perempuan
-                                    @endif
-                                </p>
-                            </div>
-                        </div>
-                        <div class="aboute_button">
-                            <a href="{{ route('guru.show', $item->id) }}" class="about_btn " >
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                @endforeach --}}
+            @foreach ($kurikulum as $item)
             <div class="col-xl-3 col-lg-3 col-md-6">
                 <div class="single-team text-center mt-30">
                     <div class="team-thumb">
-                       <img src="{{asset('images/person_1-min.jpg')}}" alt="">  {{-- $item->gambar --}}
+                       <img src="{{asset('images/kurikulum/'.$item->cover)}}" alt="">  {{-- $item->gambar --}}
                     </div>
                     <div class="team-info">
-                        <h3><a href="teacher-single.html">Broklyn Doel</a></h3>
-                        <span>Sains Teacher</span>
+                        <h3><a href="teacher-single.html">{{$item->nama_guru}}</a></h3>
+                        <span>{{$item->jabatan}}</span>
                     </div>
                 </div>
             </div>
-            {{-- @endforeach --}}
-             <div class="col-xl-3 col-lg-3 col-md-6">
-                 <div class="single-team text-center mt-30">
-                     <div class="team-thumb">
-                         <img src="{{asset('images/person_2-min.jpg')}}" alt="">
-                     </div>
-                     <div class="team-info">
-                         <h3><a href="teacher-single.html">Alex Jhonson</a></h3>
-                         <span>Art Teacher</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-xl-3 col-lg-3 col-md-6">
-                 <div class="single-team text-center mt-30">
-                     <div class="team-thumb">
-                         <img src="{{asset('images/person_3-min.jpg')}}" alt="">
-                     </div>
-                     <div class="team-info">
-                         <h3><a href="teacher-single.html">Janaton Doe</a></h3>
-                         <span>English Teacher</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-xl-3 col-lg-3 col-md-6">
-                 <div class="single-team text-center mt-30">
-                     <div class="team-thumb">
-                         <img src="{{asset('images/person_4-min.jpg')}}" alt="">
-                     </div>
-                     <div class="team-info">
-                         <h3><a href="teacher-single.html">Robot Jhonson</a></h3>
-                         <span>Math Teacher</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-xl-3 col-lg-3 col-md-6">
-                 <div class="single-team text-center mt-30">
-                     <div class="team-thumb">
-                         <img src="{{asset('images/person_5-min.jpg')}}" alt="">
-                     </div>
-                     <div class="team-info">
-                         <h3><a href="teacher-single.html">Helam Lie</a></h3>
-                         <span>Sains Teacher</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-xl-3 col-lg-3 col-md-6">
-                 <div class="single-team text-center mt-30">
-                     <div class="team-thumb">
-                         <img src="{{asset('images/person_5-min.jpg')}}" alt="">
-                     </div>
-                     <div class="team-info">
-                         <h3><a href="teacher-single.html">Alex Lia</a></h3>
-                         <span>Art Teacher</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-xl-3 col-lg-3 col-md-6">
-                 <div class="single-team text-center mt-30">
-                     <div class="team-thumb">
-                         <img src="{{asset('images/person_2-min.jpg')}}" alt="">
-                     </div>
-                     <div class="team-info">
-                         <h3><a href="teacher-single.html">Jonson Rabe</a></h3>
-                         <span>English Teacher</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-xl-3 col-lg-3 col-md-6">
-                 <div class="single-team text-center mt-30">
-                     <div class="team-thumb">
-                         <img src="{{asset('images/person_5-min.jpg')}}" alt="">
-                     </div>
-                     <div class="team-info">
-                         <h3><a href="teacher-single.html">Robin Doe</a></h3>
-                         <span>Math Teacher</span>
-                     </div>
-                 </div>
-             </div>
+            @endforeach
          </div>
      </div>
 

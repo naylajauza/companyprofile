@@ -85,7 +85,7 @@ return redirect()->route('kurikulum.index')
     public function edit($id)
     {
        $kurikulum = Kurikulum::findOrFail($id);
-        return view('admin.kurikilum.edit', compact('kurikulum'));
+        return view('admin.kurikulum.edit', compact('kurikulum'));
     }
 
     /**

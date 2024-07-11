@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kinter - School Kindergarten HTML Template</title>
+    <title>Smp Margahayu 1</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- css include -->

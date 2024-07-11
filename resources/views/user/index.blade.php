@@ -6,7 +6,7 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="slide-inner slide-overlay slide-bg-image" style="background-image: url('{{ asset('images/smp.jpg')}}">
+                    <div class="slide-inner slide-overlay slide-bg-image" style="background-image: url('{{ asset('images/p.jpg')}}">
                         <div class="container">
                             <div class="col-xl-12">
                                 <div class="page-title">
@@ -481,7 +481,7 @@
                         <div class="about-image">
                             <img style="background-image: url('{{ asset('images/tari1.jpg')}}">
                             <ul class="about-features">
-                                <h2 class="title mt-5">Visi</h2>
+                                <h2 class="title mt-5">VISI</h2>
                                 Terwujudnya insane SMP N I Margahayu yang BRILIANT dan kompertitif di tahun 2010
                             </ul>
                             <ul class="about-features">
@@ -548,51 +548,23 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                    @foreach ($artikel as $item)
                     <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-item mb-30">
+                        <div class="blog-item mb-30" style="min-height:570px;">
                             <div class="">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog-02.jpg" alt="blog image"></a>
+                                <a href="blog-details.html"><img src="{{asset('images/artikel/'.$item->cover)}}" alt=""></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta ul_li">
                                     {{-- <span><i class="far fa-user"></i>by <a href="#!">Wasim</a></span>
                                     <span><i class="far fa-calendar-alt"></i>12th March 2021</span> --}}
                                 </div>
-                                <h4 class="blog-title"><a href="blog-details.html">PPDB</a></h4>
+                                <h4 class="blog-title"><a href="{{$item->judul}}">{{$item->judul}}</a></h4>
                                 <a class="blog-btn" href="blog-details.html">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-item mb-30">
-                            <div class="blog-image">
-                                <a href="eskul"><img src="assets/img/blog/blog-02.jpg" alt="blog image"></a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    {{-- <span><i class="far fa-user"></i>by <a href="#!">Wasim</a></span>
-                                    <span><i class="far fa-calendar-alt"></i>18th March 2021</span> --}}
-                                </div>
-                                <h4 class="blog-title"><a href="eskul">EKSTRAKURIKULER</a></h4>
-                                <a class="blog-btn" href="blog-details.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="blog-item mb-30">
-                            <div class="blog-image">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog-03.jpg" alt="blog image"></a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    {{-- <span><i class="far fa-user"></i>by <a href="#!">Wasim</a></span>
-                                    <span><i class="far fa-calendar-alt"></i>16th March 2021</span> --}}
-                                </div>
-                                <h4 class="blog-title"><a href="blog-details.html">APA WE</a></h4>
-                                <a class="blog-btn" href="blog-details.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

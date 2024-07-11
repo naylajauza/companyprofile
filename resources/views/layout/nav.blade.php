@@ -117,7 +117,7 @@
         <li class="nav-item d-lg-none mobile-search-btn">
             <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">search</i></a>
         </li>
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="avascript:;"
                 data-bs-toggle="dropdown"><img src="{{asset('assets/images/county/02.png')}}" width="22" alt="">
             </a>
@@ -147,9 +147,9 @@
                             src="{{asset('assets/images/county/08.png')}}" width="20" alt=""><span class="ms-2">Hindi</span></a>
                 </li>
             </ul>
-        </li>
+        </li> --}}
 
-        <li class="nav-item dropdown position-static d-md-flex d-none">
+        {{-- <li class="nav-item dropdown position-static d-md-flex d-none">
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
                 data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">done_all</i></a>
             <div class="dropdown-menu dropdown-menu-end mega-menu shadow-lg p-4 p-lg-5">
@@ -367,10 +367,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!--end row-->
 
-                    <div class="row row-cols-3 g-0 border-bottom">
+                    {{-- <div class="row row-cols-3 g-0 border-bottom">
                         <div class="col border-end">
                             <div class="app-wrapper d-flex flex-column gap-2 text-center">
                                 <div class="app-icon">
@@ -401,10 +401,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!--end row-->
 
-                    <div class="row row-cols-3 g-0">
+                    {{-- <div class="row row-cols-3 g-0">
                         <div class="col border-end">
                             <div class="app-wrapper d-flex flex-column gap-2 text-center">
                                 <div class="app-icon">
@@ -435,12 +435,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!--end row-->
                 </div>
             </div>
         </li>
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside"
                 data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">notifications</i>
                 <span class="badge-notify">5</span>
@@ -581,13 +581,13 @@
                     </div>
                 </div>
             </div>
-        </li>
-        <li i class="nav-item d-md-flex d-none">
+        </li> --}}
+        {{-- <li i class="nav-item d-md-flex d-none">
             <a class="nav-link position-relative" data-bs-toggle="offcanvas" href="#offcanvasCart"><i
                     class="material-icons-outlined">shopping_cart</i>
                 <span class="badge-notify">8</span>
             </a>
-        </li>
+        </li> --}}
         <li class="nav-item dropdown">
             <a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
                 <img src="https://placehold.co/110x110/png" class="rounded-circle p-1 border" width="45" height="45"
@@ -598,7 +598,7 @@
                     <div class="text-center">
                         <img src="https://placehold.co/110x110/png" class="rounded-circle p-1 shadow mb-3" width="90"
                             height="90" alt="">
-                        <h5 class="user-name mb-0 fw-bold">Hello, Cidd</h5>
+                        <h5 class="user-name mb-0 fw-bold">Hello, {{Auth::user()->name}}</h5>
                     </div>
                 </a>
                 <hr class="dropdown-divider">

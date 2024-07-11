@@ -38,7 +38,34 @@
                     <li><a href="widgets-static.html"><i class="material-icons-outlined">arrow_right</i>Static</a>
                     </li>
                 </ul> --}}
-            {{-- </li>
+            </li>
+            <li class="menu-label">Tables</li>
+            <li>
+                <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><i class="material-icons-outlined">api</i>
+                    </div>
+                    <div class="menu-title">Tables</div>
+                </a>
+                <ul>
+                    <li>
+                        <a href="{{ route('kurikulum.index') }}"><i
+                                class="material-icons-outlined">arrow_right</i>Kurikulum</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('fasilitas.index') }}"><i
+                                class="material-icons-outlined">arrow_right</i>Fasilitas</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('eskul.index') }}"><i
+                                class="material-icons-outlined">arrow_right</i>Eskul</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('artikel.index') }}"><i
+                                class="material-icons-outlined">arrow_right</i>Artikel</a>
+                    </li>
+                </ul>
+            </li>
+            {{--
             <li>
                 <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><i class="material-icons-outlined">apps</i>

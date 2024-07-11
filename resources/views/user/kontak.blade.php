@@ -2,24 +2,75 @@
 @section('content')
 <main>
     <!-- page title start -->
-    <div class="page-title-area section-notch pt-170 pb-170" data-background="assets/img/bg/page-title-bg.jpg">
-         <div class="banner-overlay"></div>
-         <div class="container">
-         <div class="row">
-             <div class="col-xl-12">
-                 <div class="page-title">
-                     <h2>Our Contact Info</h2>
-                     <div class="breadcrumb-list text-left">
-                         <ul>
-                             <li><a href="index.html">Home</a></li>
-                             <li>Contact</li>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
+    <section class="hero-slider hero-style-1 section-notch">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-inner slide-overlay slide-bg-image" style="background-image: url('{{ asset('images/p.jpg')}}">
+                        <div class="container">
+                            <div class="col-xl-12">
+                                <div class="page-title">
+                                    <h2>SMPN 1 Margahayu</h2>
+                                    <div class="breadcrumb-list text-left">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="swiper-slide">
+                    <div class="slide-inner slide-overlay slide-bg-image" data-background="assets/img/slider/slide-02.jpg">
+                        <div class="container">
+                            <div data-swiper-parallax="200" class="slide-span">
+                                <span>A New Approach to</span>
+                            </div>
+                            <div data-swiper-parallax="300" class="slide-title">
+                                <h2>Kids Education</h2>
+                            </div>
+                            <div data-swiper-parallax="400" class="slide-text">
+                                <p>The Universe is one great kindergarten for man. Everything that exists has brought with it its own peculiar lesson.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="slider-btn">
+                                <a data-swiper-parallax="500" class="thm-btn thm-btn-2" href="contact.html">Admissaion
+                                    Now</a>
+                                <a data-swiper-parallax="550" class="thm-btn" href="classes.html">Our Classes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"> --}}
+                    {{-- <div class="slide-inner slide-overlay slide-bg-image" data-background="assets/img/slider/slide-03.jpg">
+                        <div class="container">
+                            <div data-swiper-parallax="200" class="slide-span">
+                                <span>A New Approach to</span>
+                            </div>
+                            <div data-swiper-parallax="300" class="slide-title">
+                                <h2>Kids Education</h2>
+                            </div>
+                            <div data-swiper-parallax="400" class="slide-text">
+                                <p>The Universe is one great kindergarten for man. Everything that exists has brought with it its own peculiar lesson.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="slider-btn">
+                                <a data-swiper-parallax="500" class="thm-btn thm-btn-2" href="contact.html">Admissaion
+                                    Now</a>
+                                <a data-swiper-parallax="550" class="thm-btn" href="classes.html">Our Classes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> --}}
+            <!-- end swiper-wrapper -->
+
+            <!-- swipper controls -->
+            <div class="container">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
  <!-- page title end -->
 
  <!-- contact start -->
@@ -36,7 +87,7 @@
                          </svg>
                      </div>
                      <h3 class="title">address line</h3>
-                     <p>Bowery St, New York, <br> NY 10013,USA</p>
+                     <p>Jl. Raya Kopo No.397, Sulaiman, Kec.Margahayu, Kab Bandung <br> Jawa Barat 40226</p>
                  </div>
              </div>
              <div class="col-lg-4 col-md-6">
@@ -49,8 +100,7 @@
                          </svg>
                      </div>
                      <h3 class="title">Phone Number</h3>
-                     <a href="tel:12555686523">+1255 - 568 - 6523</a>
-                     <a href="tel:12558677227">+1255 - 867 - 7227</a>
+                     <a href="tel:5403834">5403834</a>
                  </div>
              </div>
              <div class="col-lg-4 col-md-6">
@@ -71,58 +121,19 @@
                          </svg>
                      </div>
                      <h3 class="title">Mail Adress</h3>
-                     <a href="mailto:email@example.com">email@example.com</a>
-                     <a href="mailto:info@yourdomain.com">info@yourdomain.com</a>
+                     <a href="mailto:smpn1mgy@gmail.com">smpn1mgy@gmail.com</a>
                  </div>
              </div>
          </div>
-         <div class="row mt-40">
-             <div class="col-12">
-                 <div class="contact-from-inner mb--none-140">
-                     <form class="contact-from" action="#!">
-                         <div class="row">
-                             <div class="col-md-6">
-                                 <div class="input-field">
-                                     <input type="text" name="name" id="name" placeholder="Type your name*">
-                                 </div>
-                             </div>
-                             <div class="col-md-6">
-                                 <div class="input-field">
-                                     <input type="email" name="email" id="email" placeholder="Type your email*">
-                                 </div>
-                             </div>
-                             <div class="col-md-6">
-                                 <div class="input-field">
-                                     <input type="number" name="number" id="number" placeholder="Type your  number*">
-                                 </div>
-                             </div>
-                             <div class="col-md-6">
-                                 <div class="input-field">
-                                     <input type="text" name="website" id="website" placeholder="Type your Website">
-                                 </div>
-                             </div>
-                             <div class="col-md-12">
-                                 <div class="input-field">
-                                     <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your massage*"></textarea>
-                                 </div>
-                             </div>
-                             <div class="col-md-12">
-                                 <div class="contact-btn text-center">
-                                     <button class="thm-btn" type="submit">Send Massage</button>
-                                 </div>
-                             </div>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div>
+    </div>
      </div>
  </section>
  <!-- contact end -->
 
  <!-- google map start -->
  <div class="google-map">
-     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.254272231177!2d90.3654215!3d23.7985508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1592852423971!5m2!1sen!2sbd" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.276866288277!2d107.56469017367233!3d-6.976624293024116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68eed14f83da45%3A0x65f293d226c0baff!2sSMPN%201%20Margahayu!5e0!3m2!1sid!2sid!4v1720576574734!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
  </div>
  <!-- google map end -->
 

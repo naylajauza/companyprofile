@@ -1,107 +1,95 @@
-@extends('layouts.admin')
+@extends('layout.main')
 @section('styles')
-<link href="{{asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+<link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 @endsection
-
 @section('content')
-	<div class="col-12 col-xl-12">
-    	<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Dashboard</div>
-					<div class="ps-3">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">Admin</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="ms-auto">
-						<div class="btn-group">
-							<button type="button" class="btn btn-grd-info"><a href="{{route('kurikulum.create')}}" class="text-white">Add Data</a></button>
-						</div>
-					</div>
-				</div>
-				<!--end breadcrumb-->
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="breadcrumb-title pe-3">Components</div>
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="ms-auto">
+        <div class="btn-group">
+            <a href="{{route('kurikulum.create')}}" class="btn btn-sm btn-primary" style="float: right">Tambah</a>
+        </div>
+    </div>
+</div>
+<!--end breadcrumb-->
 
-        <h6 class="mb-0 text-uppercase">DataTable kurikulum</h6>
-				<hr>
-				<div class="card">
-					<div class="card-body">
-						<div class="table-responsive">
-							<table id="example" class="table table-striped table-bordered" style="width:100%">
-								<thead>
-									<tr>
-                                        <th>No</th>
-										<th>Cover</th>
-										<th>Nama Guru</th>
-										<th>Jabatan</th>
-										<th>Action</th>
-									</tr>
-								</thead>
-								<tbody>
-                                    @php $i = 1;  @endphp
-                                    @foreach ($kurikulum as $data )
-									@if($loop->first)
-                                        {{-- <tr>
-                                            <td>{{$i++}}</td>
-                                            <td>{{$data->nama_ruangan}}</td>
-                                            <td>{{$data->deskripsi}}</td>
-											<td>
-												<img src="{{ asset('/foto/kurikulum/' . $data->foto) }}" width="100">
-											  </td>
 
-											<td></td>
-										</tr> --}}
-										@else
-										<tr>
-                                            <td>{{$i++}}</td>
-                                            <td>{{$data->nama_guru}}</td>
-                                            <td>{{$data->jabatan}}</td>
-											<td>
-												<img src="{{ asset('/images/kurikulum/' . $data->cover) }}" width="100">
-											  </td>
-                                            {{-- <td>{{$data->isAdmin == 1 ? 'Admin' : 'User'}}</td>			 --}}
-                                            <td>
-                                                <form action="{{route('kurikulum.destroy',$data->id)}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <a href="{{route('kurikulum.edit',$data->id)}}" class="btn btn-grd-warning">
-                                                        Edit
-                                                </a>
-												{{-- @if ($i == 2)
-												<button class="btn btn-grd-danger" type="submit" disabled
-													onclick="return confirm('Apakah anda yakin ingin menghapus data ini')">
-													Delete
-												</button>
-											@else --}}
-												{{-- <button class="btn btn-sm btn-danger" type="submit"
-												data-confirm-delete="true">
-														Delete
-												</button> --}}
-												<a href="{{ route('kurikulum.destroy', $data->id) }}" class="btn btn-grd-danger" data-confirm-delete="true">Delete</a>
-											@endif
-                                                </form>
-                                            </td>
-                                        </tr>
+<h6 class="mb-0 text-uppercase">Data kurikulum</h6>
+<hr>
+<div class="card">
+    {{-- <div class="card-header">
 
-                                    @endforeach
-
-                                </tbody>
-							</table>
-
-						</div>
-					</div>
-				</div>
-	</div>
+    </div> --}}
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Guru</th>
+                        <th>jabatan</th>
+                        <th>Cover</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                    $i = 1
+                    @endphp
+                    @foreach ($kurikulum as $item)
+                    <tr>
+                        <td>{{$i++}}</td>
+                        <td>{{$item->nama_guru}}</td>
+                        <td>{{$item->jabatan}}</td>
+                        <td><img src="{{asset('images/kurikulum/'.$item->cover)}}" style="width: 10%; height:10%" alt=""></td>
+                        <td>
+                            @if ($item->isAdmin)
+                            Admin
+                            @else
+                            kurikulum
+                            @endif
+                        </td>
+                        <td>
+                            <form action="{{route('kurikulum.destroy',$item->id)}}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                {{-- @if ($i == 2)
+                                <button class="btn btn-sm btn-danger" type="submit" disabled
+                                data-confirm-delete="true">
+                                Can't Delete
+                                </button>
+                                @else --}}
+                                <a href="{{route('kurikulum.edit',$item->id)}}" class="btn btn-sm btn-success">
+                                    Edit
+                                </a>
+                                <a href="{{ route('kurikulum.destroy', $item->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                                {{-- @endif --}}
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('scripts')
-<script src="{{asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
-	<script src="{{asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
-	<script>
-		$(document).ready(function() {
+<script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function() {
 			$('#example').DataTable();
-		  } );
-	</script>
+		});
+</script>
 @endpush

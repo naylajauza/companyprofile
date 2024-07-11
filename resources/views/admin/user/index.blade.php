@@ -70,10 +70,8 @@
                                 <a href="{{route('users.edit',$item->id)}}" class="btn btn-sm btn-success">
                                     Edit
                                 </a>
-                                <button class="btn btn-sm btn-danger" type="submit"
-                                    data-confirm-delete="true">
-                                    Delete
-                                </button>
+                                <a href="{{ route('users.destroy', $item->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+
                                 @endif
                             </form>
                         </td>

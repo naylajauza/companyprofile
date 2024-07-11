@@ -54,7 +54,7 @@ class Fasilitascontroller extends Controller
        if ($request->hasFile('cover')) {
         $img = $request->file('cover');
         $name = rand(1000, 9999) . $img->getClientOriginalName();
-        $img->move('images/fasiltas/', $name);
+        $img->move('images/fasilitas/', $name);
         $fasilitas->cover = $name;
     }
     $fasilitas->save();

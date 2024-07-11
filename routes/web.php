@@ -56,11 +56,15 @@ Route::get('shopdetails', [FrontController::class, 'shopdetails']);
 //     Route::resource('eskul', EskulController::class);
 
     // untuk Route Backend 
- Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+ Route::group(['prefix' => 'admin', 'middleware' => ['auth',isAdmin::class]], function () {
     Route::get('/', function () {
         return view('admin.index');
     });
-    route::resource('users', UsersController::class);
+    route::resource('users', App\Http\Controllers\UsersController::class);
+    route::resource('kurikulum', App\Http\Controllers\KurikulumController::class);
+    route::resource('fasilitas', App\Http\Controllers\FasilitasController::class);
+    route::resource('eskul', App\Http\Controllers\EskulController::class);
+    route::resource('artikel', App\Http\Controllers\ArtikelController::class);
 
 
     // route lain

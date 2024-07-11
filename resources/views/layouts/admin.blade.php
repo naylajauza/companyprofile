@@ -28,6 +28,7 @@
   <link href="{{asset('./sass/semi-dark.css')}}" rel="stylesheet">
   <link href="{{asset('./sass/bordered-theme.css')}}" rel="stylesheet">
   <link href="{{asset('./sass/responsive.css')}}" rel="stylesheet">
+  @include('sweetalert::alert')
 
   @yield('styles')
 

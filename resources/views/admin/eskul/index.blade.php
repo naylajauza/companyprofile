@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layout.main')
 @section('styles')
 <link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 @endsection
@@ -23,7 +23,7 @@
 <!--end breadcrumb-->
 
 
-<h6 class="mb-0 text-uppercase">Data User</h6>
+<h6 class="mb-0 text-uppercase">Data Eskul</h6>
 <hr>
 <div class="card">
     {{-- <div class="card-header">
@@ -35,9 +35,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama eskul</th>
-                        <th>Cover</th>
+                        <th>Nama Eskul</th>
                         <th>Deskripsi</th>
+                        <th>Cover</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -49,12 +49,25 @@
                     <tr>
                         <td>{{$i++}}</td>
                         <td>{{$item->eskul}}</td>
-                        <td><img src="{{asset('/images/eskul/' .$item->cover)}}" width="100"> </td>
                         <td>{{$item->deskripsi}}</td>
+                        <td><img src="{{asset('images/eskul/'.$item->cover)}}" style="width: 10%; height:10%" alt=""></td>
+                        {{-- <td>
+                            @if ($item->isAdmin)
+                            Admin
+                            @else
+                            eskul
+                            @endif
+                        </td> --}}
                         <td>
                             <form action="{{route('eskul.destroy',$item->id)}}" method="post">
                                 @method('DELETE')
                                 @csrf
+
+                                {{-- <button class="btn btn-sm btn-danger" type="submit" disabled
+                                data-confirm-delete="true">
+                                Can't Delete
+                                </button> --}}
+
                                 <a href="{{route('eskul.edit',$item->id)}}" class="btn btn-sm btn-success">
                                     Edit
                                 </a>
